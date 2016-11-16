@@ -1,0 +1,18 @@
+Immediate
+
+INFO  2016-10-20 15:25:05,704 [[examples].LargeXML.receiver.01] org.mule.transport.file.FileMessageReceiver: Lock obtained on file: C:\Users\n0276035\AnypointStudio\workspace\examples\src\main\resources\NEH_Grants2010s.xml
+INFO  2016-10-20 15:25:05,830 [[examples].largexmlFlow.stage1.02] org.mule.api.processor.LoggerMessageProcessor: "At 1" + NEH_Grants2010s.xml
+INFO  2016-10-20 15:25:11,461 [[examples].largexmlFlow.stage1.02] org.mule.api.processor.LoggerMessageProcessor: "At 2 " + com.mulesoft.weave.reader.ByteArraySeekableStream@328141cb
+INFO  2016-10-20 15:25:11,508 [[examples].largexmlFlow.stage1.02] org.mule.api.processor.LoggerMessageProcessor: "At 3 .End of processing" + com.mulesoft.weave.reader.ByteArraySeekableStream@328141cb
+INFO  2016-10-20 15:25:11,540 [[examples].largeJSONFile.dispatcher.01] org.mule.lifecycle.AbstractLifecycleManager: Initialising: 'largeJSONFile.dispatcher.1151914680'. Object is: FileMessageDispatcher
+INFO  2016-10-20 15:25:11,556 [[examples].largeJSONFile.dispatcher.01] org.mule.lifecycle.AbstractLifecycleManager: Starting: 'largeJSONFile.dispatcher.1151914680'. Object is: FileMessageDispatcher
+INFO  2016-10-20 15:25:11,572 [[examples].largeJSONFile.dispatch
+
+Deferred
+INFO  2016-10-20 15:26:25,679 [[examples].LargeXML.receiver.01] org.mule.transport.file.FileMessageReceiver: Lock obtained on file: C:\Users\n0276035\AnypointStudio\workspace\examples\src\main\resources\NEH_Grants2010s.xml
+INFO  2016-10-20 15:26:25,805 [[examples].largexmlFlow.stage1.02] org.mule.api.processor.LoggerMessageProcessor: "At 1" + NEH_Grants2010s.xml
+INFO  2016-10-20 15:26:27,880 [[examples].largexmlFlow.stage1.02] org.mule.api.processor.LoggerMessageProcessor: "At 2 " + com.mulesoft.weave.mule.WeaveOutputHandler@20765171
+INFO  2016-10-20 15:26:27,927 [[examples].largexmlFlow.stage1.02] org.mule.api.processor.LoggerMessageProcessor: "At 3 .End of processing" + com.mulesoft.weave.mule.WeaveOutputHandler@20765171
+INFO  2016-10-20 15:26:27,928 [[examples].largeJSONFile.dispatcher.01] org.mule.lifecycle.AbstractLifecycleManager: Initialising: 'largeJSONFile.dispatcher.186660234'. Object is: FileMessageDispatcher
+INFO  2016-10-20 15:26:27,959 [[examples].largeJSONFile.dispatcher.01] org.mule.lifecycle.AbstractLifecycleManager: Starting: 'largeJSONFile.dispatcher.186660234'. Object is: FileMessageDispatcher
+INFO  2016-10-20 15:26:27,975 [[examples].largeJSONFile.dispatcher.01] org

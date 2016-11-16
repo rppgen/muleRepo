@@ -1,0 +1,11 @@
+{
+    "inputMessageMetadata": {},
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "neh-json-schema"
+        }
+    },
+    "id": "cb10e8e8-27ca-4e28-9bfe-b5675db4f258",
+    "version": "5.2.0.0"
+}

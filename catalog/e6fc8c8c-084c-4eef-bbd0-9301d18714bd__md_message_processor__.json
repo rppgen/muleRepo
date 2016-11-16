@@ -1,0 +1,11 @@
+{
+    "inputMessageMetadata": {},
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "potus"
+        }
+    },
+    "id": "e6fc8c8c-084c-4eef-bbd0-9301d18714bd",
+    "version": "5.2.0.0"
+}

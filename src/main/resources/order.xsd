@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xs:element name="order" type="orderType"/>
+  <xs:complexType name="productType">
+    <xs:sequence>
+      <xs:element type="xs:byte" name="price"/>
+      <xs:element type="xs:string" name="model"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="paymentType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="payment-type"/>
+      <xs:element type="xs:string" name="currency"/>
+      <xs:element type="xs:byte" name="installments"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buyerType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="email"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="address"/>
+      <xs:element type="xs:string" name="city"/>
+      <xs:element type="xs:string" name="state"/>
+      <xs:element type="xs:short" name="postCode"/>
+      <xs:element type="xs:string" name="nationality"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="orderType">
+    <xs:sequence>
+      <xs:element type="productType" name="product"/>
+      <xs:element type="xs:byte" name="item_amount"/>
+      <xs:element type="paymentType" name="payment"/>
+      <xs:element type="buyerType" name="buyer"/>
+      <xs:element type="xs:string" name="shop"/>
+      <xs:element type="xs:string" name="salesperson"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

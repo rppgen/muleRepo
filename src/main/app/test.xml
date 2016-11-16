@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+    <flow name="testFlow" initialState="stopped">
+        <http:listener config-ref="HTTP_8888" path="/test" metadata:id="5fae886c-58e1-4104-bada-d8b37ef781bf" doc:name="HTTP"/>
+        <dw:transform-message metadata:id="72e0c9be-de00-438c-8e90-94f3d882c4b7" doc:name="Transform Message">
+            <dw:input-payload doc:sample="sample_data\order_2.xml"/>
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+{
+    order: {
+        product: {
+            price: payload.order.product.price as :string
+        }
+    }
+}]]></dw:set-payload>
+        </dw:transform-message>
+        <set-payload value="#[payload]" doc:name="Set Payload"/>
+    </flow>
+</mule>

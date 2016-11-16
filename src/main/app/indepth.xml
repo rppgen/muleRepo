@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd">
+    <http:listener-config name="HTTP_8888" host="0.0.0.0" port="8888" doc:name="HTTP Listener Configuration"/>
+    <flow name="indepthFlow">
+        <http:listener config-ref="HTTP_8888" path="/indepth" metadata:id="68eefc5b-924e-4208-bf71-c0a93e0caa27" doc:name="HTTP"/>
+        <dw:transform-message metadata:id="1258a5fc-ddd7-43af-b42f-6e052e72314f" doc:name="Transform Message" mode="deferred">
+            <dw:set-payload><![CDATA[%dw 1.0
+%var conversionRate=10
+
+%var makeShippingLabel = (ShippingLabel) -> {
+    ShippingLabel: upper payload.order.buyer.address ++ ", " ++
+    upper payload.order.buyer.city ++  ", " ++ upper payload.order.buyer.state ++  ", " ++  payload.order.buyer.postCode
+}
+%output application/json
+%type mydate = :string { format: "YYYY/MM/dd" }
+---
+{
+    order: payload.order,
+    shop: payload.order.shop,
+    salesperson: payload.order.salesperson,
+        ShippingLabel:  makeShippingLabel (payload),
+        IsEmailAvailable: payload.order.buyer.email?,
+        IsFullPayment: "Yes" when payload.order.payment.installments == "1" otherwise IsFullPayment: "No",
+        IsModelNameFunny: payload.order.product.model contains "Mule",
+        HasHotmailAddress: payload.order.buyer.email endsWith "hotmail.com",
+        OrderRecdTimeStamp: now + |P2Y|,
+        OrderDate: now as :mydate,
+        BTW_WhoWillWin: lookup("myOtherFlow", {a: random as :number})
+}]]></dw:set-payload>
+        </dw:transform-message>
+        <set-payload value="#[payload]" doc:name="Set Payload"/>
+    </flow>
+    <flow name="myOtherFlow">
+        <logger message="#[payload.a]" level="INFO" doc:name="Logger"/>
+        <choice doc:name="Choice">
+            <when expression="#[payload.a &gt; 0.5000000000000001 ]">
+                <set-payload value="&quot;Mr Trump&quot; " doc:name="MrTrump"/>
+            </when>
+            <otherwise>
+                <set-payload value="&quot;Mrs Clinton&quot;" doc:name="MrsClinton"/>
+            </otherwise>
+        </choice>
+
+</flow>
+</mule>

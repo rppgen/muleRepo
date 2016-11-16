@@ -1,0 +1,44 @@
+{
+  "Grants": {
+    "-xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "-xsi:noNamespaceSchemaLocation": "NEH_Grants_v2.8.xsd",
+    "Grant": {
+      "-AppNumber": "TD-50102-10",
+      "ApplicantType": "O",
+      "Institution": "Center for Independent Documentary, Inc.",
+      "OrganizationType": "Four-Year College",
+      "InstCity": "Boston",
+      "InstState": "MA",
+      "InstPostalCode": "02135-1032",
+      "InstCountry": "USA",
+      "CouncilDate": "2009-07-01",
+      "YearAwarded": "2010",
+      "ProjectTitle": "Mysticism and Monotheism",
+      "Program": "America's Media Makers: Development Grants",
+      "Division": "Public Programs",
+      "ApprovedOutright": "65000.0000",
+      "ApprovedMatching": "0.0000",
+      "AwardOutright": "65000.0000",
+      "AwardMatching": "0.0000",
+      "OriginalAmount": "65000.0000",
+      "BeginGrant": "2010-02-01T00:00:00",
+      "EndGrant": "2010-08-31T00:00:00",
+      "ToSupport": "Scripting for a two-hour television broadcast and companion website on mystical practice and its contemporary role in Judaism, Christianity, and Islam.",
+      "PrimaryDiscipline": "Comparative Religion",
+      "SupplementCount": "0",
+      "ParticipantCount": "1",
+      "Participant": {
+        "Firstname": "Christine",
+        "Lastname": "Herbes-Sommers",
+        "Institution": "Center for Independent Documentary, Inc.",
+        "City": "Boston",
+        "State": "MA",
+        "Country": "USA",
+        "ParticipantTypeID": "Project Director",
+        "ValidFr": "2009-02-03T07:20:39.360"
+      },
+      "DisciplineCount": "1",
+      "Discipline": { "Name": "Comparative Religion" }
+    }
+  }
+}

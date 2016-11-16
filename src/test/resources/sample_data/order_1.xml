@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<order>
+  <product>
+    <price>1</price>
+    <model>????</model>
+  </product>
+  <item_amount>1</item_amount>
+  <payment>
+    <payment-type>????</payment-type>
+    <currency>????</currency>
+    <installments>1</installments>
+  </payment>
+  <buyer>
+    <email>????</email>
+    <name>????</name>
+    <address>????</address>
+    <city>????</city>
+    <state>????</state>
+    <postCode>1</postCode>
+    <nationality>????</nationality>
+  </buyer>
+  <shop>????</shop>
+  <salesperson>????</salesperson>
+</order>

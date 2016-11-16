@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "order": {
+      "type": "object",
+      "properties": {
+        "product": {
+          "type": "object",
+          "properties": {
+            "price": {
+              "type": "string"
+            },
+            "model": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "price",
+            "model"
+          ]
+        },
+        "item_amount": {
+          "type": "string"
+        },
+        "payment": {
+          "type": "object",
+          "properties": {
+            "payment-type": {
+              "type": "string"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "installments": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "payment-type",
+            "currency",
+            "installments"
+          ]
+        },
+        "buyer": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            },
+            "city": {
+              "type": "string"
+            },
+            "state": {
+              "type": "string"
+            },
+            "postCode": {
+              "type": "string"
+            },
+            "nationality": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "email",
+            "name",
+            "address",
+            "city",
+            "state",
+            "postCode",
+            "nationality"
+          ]
+        },
+        "shop": {
+          "type": "string"
+        },
+        "salesperson": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "product",
+        "item_amount",
+        "payment",
+        "buyer",
+        "shop",
+        "salesperson"
+      ]
+    }
+  },
+  "required": [
+    "order"
+  ]
+}

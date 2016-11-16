@@ -1,0 +1,16 @@
+{
+    "inputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "neh-xml-schema"
+        }
+    },
+    "outputMessageMetadata": {
+        "messagePayload": {
+            "connectorName": "#_custom_mule_metadata_type_#",
+            "typeId": "neh-json-schema"
+        }
+    },
+    "id": "ee8cf185-ef81-4e23-b1bf-411bfff84e58",
+    "version": "5.2.0.0"
+}
